@@ -28,7 +28,7 @@ export default function useAudioPlayer(id) {
         if (id === "0") {
           setCharacter(data[0]);
         } else {
-          const response = await axios.get(`/rickandmorty/character/${id}`, {
+          const response = await axios.get(`https://rickandmortyserver-production.up.railway.app/rickandmorty/character/${id}`, {
             cancelToken: source.token,
           });
           setCharacter(response.data);

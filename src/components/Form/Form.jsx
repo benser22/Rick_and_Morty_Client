@@ -30,7 +30,7 @@ const Form = ({ userData, setUserData }) => {
   // Función para realizar el login
   const login = async (userData) => {
     const { email, password } = userData;
-    const URL = "/rickandmorty/login/";
+    const URL = "https://rickandmortyserver-production.up.railway.app/rickandmorty/login/";
     try {
       const {data} = await axios.get(URL, { params: { email, password } });
       const { access } = data;
