@@ -1,0 +1,123 @@
+.title {
+  color: white;
+  margin: 0;
+  font-size: 0.8em;
+  font-family: Verdana, sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.home {
+  color: white;
+  font-size: 30px;
+  padding: 10px 15px;
+}
+.home:hover {
+  cursor: pointer;
+  color: #c0df3e;
+}
+
+.select_container {
+  margin-top: 2vh;
+  margin-bottom: 20px;
+  margin-left: -8vh;
+}
+.myhr{
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.select_container label {
+  margin-left: 4vh;
+  margin-right: 1vh;
+  font-family: Arial;
+  color: #133343;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.myButton {
+  margin: 0;
+  margin-top: -10vh;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 20px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  background-image: linear-gradient(90deg, #173e51 0%, #21546d 50%, #286989 100%);
+  box-shadow: rgb(0, 0, 0) 1px 1px 4px 0px;
+  border: 1px solid #0e2531;
+  display: inline-block;
+  margin-inline-start: 85%;
+}
+
+.myButton:hover {
+  filter: saturate(180%);
+  box-shadow: 0 0 8px #ffffff;
+}
+
+
+.myButton:active {
+  box-shadow: unset;
+  filter: brightness(150%);
+}
+
+.select_container select {
+  color: white;
+  background-color: #133343;
+  padding: 4px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.select_container option {
+  font-style: italic;
+}
+
+@media (max-width: 500px) {
+  .select_container {
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.8);
+    margin: 0;
+    margin-left: 14vh;
+  }
+
+  .select_container label {
+    margin: unset;
+    color: #ffffff;
+    margin-left: 4vh;
+  }
+  .myhr {
+    margin-top: 10vh;
+  }
+  .select_container select {
+    transform: scale(0.8);
+    margin: unset;
+    margin-left: 2vh;
+  }
+
+  .container {
+    text-align: end;
+    margin-right: 6vh;
+  }
+  .title {
+    font-size: 10px;
+    margin-right: 6vh;
+  }
+  .home {
+    justify-content: center;
+    margin-right: 18%;
+  }
+  .myButton {
+    margin: 0;
+    max-width: 14vh;
+    font-size: 10px;
+    margin-left: 38%;
+    margin-bottom: -10vh;
+    margin-top: 1vh;
+  }
+}
