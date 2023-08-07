@@ -50,13 +50,15 @@ const Home = ({ onClose, characters, handleEraseAll }) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+    // eslint-disable-next-line
   }, []);
-
 
   return (
     <div data-testid="home-component">
       <h2 className={styles.title}>HOME</h2>
-      <button className={styles.myButton} onClick={handleEraseAll}>Delete All</button>
+      <button className={styles.myButton} onClick={handleEraseAll}>
+        Delete All
+      </button>
       <hr className={styles.myhr}></hr>
       {showAnchor && (
         // Mostrar el icono de ancla solo cuando showAnchor es verdadero
