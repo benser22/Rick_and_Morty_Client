@@ -28,12 +28,6 @@ export default function Favorites() {
     // eslint-disable-next-line
     []
   );
-
-  useEffect(() => {
-    dispatch(loadFavorites()); // Llama a la acción para cargar los favoritos desde el servidor
-  }, 
-  // eslint-disable-next-line
-  []);
   
   useEffect(() => {
     dispatch({ type: "ORDER", payload: "A" }); // Establecer orden ascendente
