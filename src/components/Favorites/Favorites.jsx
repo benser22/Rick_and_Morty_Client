@@ -19,8 +19,10 @@ export default function Favorites() {
 
   useEffect(() => {
     dispatch(loadFavorites()); // Llama a la acción para cargar los favoritos desde el servidor
-  }, [dispatch]);
-
+  }, 
+  // eslint-disable-next-line
+  []);
+  
   useEffect(() => {
     dispatch({ type: "ORDER", payload: "A" }); // Establecer orden ascendente
     dispatch({ type: "FILTER", payload: "" }); // Establecer filtro en "All"
