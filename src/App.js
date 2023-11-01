@@ -38,7 +38,8 @@ export default function App() {
     } else {
       try {
         const { data } = await axios(
-          `https://rickandmortyserver-production.up.railway.app/rickandmorty/character/${id}`
+          `https://rick-and-morty-server-benser22.vercel.app/rickandmorty/character/${id}`
+          // `https://rickandmortyserver-production.up.railway.app/rickandmorty/character/${id}`
         );
         if (characters.find((character) => character.id === data.id)) {
           window.alert("This character already exists!");
