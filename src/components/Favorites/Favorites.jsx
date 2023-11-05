@@ -3,11 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import Card from "../Card/Card";
-import {
-  removeFav,
-  removeAllFavorites,
-  loadFavorites,
-} from "../../redux/actions/actions";
+import { removeFav, removeAllFavorites, loadFavorites } from "../../redux/actions/actions";
 
 // Estilos
 import styles from "../Cards/Cards.module.css";
@@ -21,14 +17,10 @@ export default function Favorites() {
   const navigate = useNavigate();
   let amount = "";
 
-  useEffect(
-    () => {
-      dispatch(loadFavorites()); // Llama a la acción para cargar los favoritos desde el servidor
-    },
-    // eslint-disable-next-line
-    []
-  );
-  
+  useEffect(() => {
+    dispatch(loadFavorites()); // Llama a la acción para cargar los favoritos desde el servidor
+  }, [dispatch]);
+
   useEffect(() => {
     dispatch({ type: "ORDER", payload: "A" }); // Establecer orden ascendente
     dispatch({ type: "FILTER", payload: "" }); // Establecer filtro en "All"
@@ -84,11 +76,7 @@ export default function Favorites() {
           <option value="D">Descendent</option>
         </select>
         <label htmlFor="filter-select">Filter by:</label>
-        <select
-          id="filter-select"
-          value={genderFilter}
-          onChange={handleGenderFilterChange}
-        >
+        <select id="filter-select" value={genderFilter} onChange={handleGenderFilterChange}>
           <option value="">All</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>

@@ -20,7 +20,7 @@ import { addFav, removeFav } from "./redux/actions/actions";
 
 import data from "../src/utils/data";
 
-// * FUNCION PRINCIPAL
+// * FUNCION PRINCIPAL //
 export default function App() {
   const [characters, setCharacters] = useState([]);
   const favorites = useSelector((state) => state.favorites);
@@ -38,8 +38,7 @@ export default function App() {
     } else {
       try {
         const { data } = await axios(
-          `https://rick-and-morty-server-ny1slps2e-benser22.vercel.app/rickandmorty/character/${id}`
-          // `https://rickandmortyserver-production.up.railway.app/rickandmorty/character/${id}`
+          `http://localhost:3001/rickandmorty/character/${id}`
         );
         if (characters.find((character) => character.id === data.id)) {
           window.alert("This character already exists!");

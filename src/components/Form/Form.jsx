@@ -32,7 +32,7 @@ const Form = () => {
 
   const login = async () => {
     const { email, password } = userData;
-    const URL = "https://rick-and-morty-server-ny1slps2e-benser22.vercel.app/rickandmorty/login";
+    const URL = "http://localhost:3001/rickandmorty/login";
     try {
       const { data } = await axios.get(URL, { params: { email, password } });
       const { access } = data;
@@ -41,7 +41,7 @@ const Form = () => {
         navigate("/home", { state: { email, password } });
       }
     } catch (error) {
-      error.request.status > 210
+      error.request.status === 404
         ? window.alert("The email or password is not correct")
         : window.alert(`${error.message}: The server doesn't respond`);
     }
@@ -49,7 +49,7 @@ const Form = () => {
 
   const register = async () => {
     const { email, password } = userData;
-    const URL = "https://rick-and-morty-server-ny1slps2e-benser22.vercel.app/rickandmorty/login";
+    const URL = "http://localhost:3001/rickandmorty/login";
     try {
       const response = await axios.post(URL, { email, password });
       console.log(response.data);
