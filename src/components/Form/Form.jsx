@@ -32,7 +32,8 @@ const Form = () => {
 
   const login = async () => {
     const { email, password } = userData;
-    const URL = "http://localhost:3001/rickandmorty/login";
+    const URL =
+      "https://rick-and-morty-server-3uqp.onrender.com/rickandmorty/login";
     try {
       const { data } = await axios.get(URL, { params: { email, password } });
       const { access } = data;
@@ -49,7 +50,8 @@ const Form = () => {
 
   const register = async () => {
     const { email, password } = userData;
-    const URL = "http://localhost:3001/rickandmorty/login";
+    const URL =
+      "https://rick-and-morty-server-3uqp.onrender.com/rickandmorty/login";
     try {
       const response = await axios.post(URL, { email, password });
       console.log(response.data);
@@ -61,7 +63,9 @@ const Form = () => {
         });
         window.alert(`${email} was created successfully`);
       } else if (response.status === 200) {
-        window.alert(`There is already a user with ${email}, try another email`);
+        window.alert(
+          `There is already a user with ${email}, try another email`
+        );
       } else {
         throw new Error("Failed to create user");
       }
@@ -69,7 +73,6 @@ const Form = () => {
       console.log(error.message);
     }
   };
-  
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -113,7 +116,9 @@ const Form = () => {
           SUBMIT
         </button>
       </form>
-      <button className={styles.myButton} onClick={handleRegister}>Register</button>
+      <button className={styles.myButton} onClick={handleRegister}>
+        Register
+      </button>
     </div>
   );
 };

@@ -22,15 +22,18 @@ export default function useAudioPlayer(id) {
   useEffect(() => {
     // Instancia de CancelToken para cancelar la solicitud si el componente se desmonta antes de que se complete la solicitud
     const source = axios.CancelToken.source();
-  
+
     const fetchData = async () => {
       try {
         if (id === "0") {
           setCharacter(data[0]);
         } else {
-          const response = await axios.get(`http://localhost:3001/rickandmorty/character/${id}`, {
-            cancelToken: source.token,
-          });
+          const response = await axios.get(
+            `https://rick-and-morty-server-3uqp.onrender.com/rickandmorty/character/${id}`,
+            {
+              cancelToken: source.token,
+            }
+          );
           setCharacter(response.data);
         }
       } catch (error) {
@@ -41,9 +44,9 @@ export default function useAudioPlayer(id) {
         }
       }
     };
-  
+
     fetchData();
-  
+
     return () => {
       // Al desmontar, uso el callback para cancelar la solicitud y limpiar los campos de character
       source.cancel("Request canceled");
@@ -55,7 +58,7 @@ export default function useAudioPlayer(id) {
       setDisplayedSpecies("");
     };
   }, [id]);
-  
+
   // Este hook maneja la animación de mostrar letra por letra del personaje que recibimos antes
   useEffect(() => {
     if (character) {

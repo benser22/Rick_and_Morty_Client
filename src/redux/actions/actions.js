@@ -5,11 +5,11 @@ export const REMOVE_FAV = "REMOVE_FAV";
 export const FILTER = "FILTER";
 export const ORDER = "ORDER";
 export const REMOVE_ALL_FAVORITES = "REMOVE_ALL_FAVORITES";
-export const LOAD_FAVORITES = "LOAD_FAVORITES"; 
-
+export const LOAD_FAVORITES = "LOAD_FAVORITES";
 
 export const loadFavorites = () => {
-  const endpoint = "http://localhost:3001/rickandmorty/fav"; 
+  const endpoint =
+    "https://rick-and-morty-server-3uqp.onrender.com/rickandmorty/fav";
   return async (dispatch) => {
     try {
       const { data } = await axios.get(endpoint);
@@ -18,7 +18,7 @@ export const loadFavorites = () => {
       }
       return dispatch({
         type: LOAD_FAVORITES,
-        payload: data, 
+        payload: data,
       });
     } catch (error) {
       console.log(error.message);
@@ -28,7 +28,8 @@ export const loadFavorites = () => {
 
 // ACTION | addFav
 export const addFav = (character) => {
-  const endpoint = "http://localhost:3001/rickandmorty/fav";
+  const endpoint =
+    "https://rick-and-morty-server-3uqp.onrender.com/rickandmorty/fav";
   return async (dispatch) => {
     try {
       const { data } = await axios.post(endpoint, character);
@@ -47,7 +48,8 @@ export const addFav = (character) => {
 
 // ACTION | removeFav
 export const removeFav = (id) => {
-  const endpoint = "http://localhost:3001/rickandmorty/fav/" + id;
+  const endpoint =
+    "https://rick-and-morty-server-3uqp.onrender.com/rickandmorty/fav/" + id;
   return async (dispatch) => {
     try {
       const { data } = await axios.delete(endpoint);
@@ -68,7 +70,8 @@ export const removeFav = (id) => {
 
 // Acción para eliminar todos los favoritos
 export const removeAllFavorites = () => {
-  const endpoint = "http://localhost:3001/rickandmorty/fav";
+  const endpoint =
+    "https://rick-and-morty-server-3uqp.onrender.com/rickandmorty/fav";
   return (dispatch) => {
     axios.delete(endpoint).then(() => {
       dispatch({
